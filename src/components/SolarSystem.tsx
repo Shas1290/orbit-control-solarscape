@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { planetsData, Planet } from "@/data/planets";
@@ -62,9 +61,9 @@ export const SolarSystem = () => {
     // Create stars background
     createStars(scene);
 
-    // Create sun
+    // Create sun - Fixed material to use MeshStandardMaterial for emissive properties
     const sunGeometry = new THREE.SphereGeometry(3, 32, 32);
-    const sunMaterial = new THREE.MeshBasicMaterial({ 
+    const sunMaterial = new THREE.MeshStandardMaterial({ 
       color: 0xffd700,
       emissive: 0xffd700,
       emissiveIntensity: 0.3
